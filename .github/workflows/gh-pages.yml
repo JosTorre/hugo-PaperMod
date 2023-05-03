@@ -40,6 +40,7 @@ jobs:
     env:
       HUGO_VERSION: "0.83.0"
     steps:
+<<<<<<< Updated upstream
       - name: Check version
         if: ${{ github.event.inputs.hugoVersion }}
         run: export HUGO_VERSION="${{ github.event.inputs.hugoVersion }}"
@@ -48,6 +49,9 @@ jobs:
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Checkout
+=======
+      - name: Git checkout
+>>>>>>> Stashed changes
         uses: actions/checkout@v3
         with:
           ref: exampleSite
